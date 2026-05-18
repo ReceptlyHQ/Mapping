@@ -1,4 +1,4 @@
-package main
+package mapmatching
 
 import (
 	"fmt"
@@ -190,19 +190,4 @@ func MapMatching(gps GPSData) Position {
 	}
 
 	return best
-}
-
-func main() {
-	// simple demo points
-	gpsSamples := []GPSData{
-		{Latitude: 37.7765, Longitude: -122.4194, Speed: 30, Course: "0"},   // near Main St
-		{Latitude: 37.7760, Longitude: -122.4190, Speed: 10, Course: "90"},  // between roads
-		{Latitude: 37.7760, Longitude: -122.4200, Speed: 5, Course: "270"},  // near 1st Ave
-	}
-
-	for i, g := range gpsSamples {
-		pos := MapMatching(g)
-		fmt.Printf("sample %d -> RoadSegID=%d Name=%s Pos=(%.6f, %.6f) Dir=%s\n",
-			i+1, pos.RoadSegID, pos.RoadName, pos.Latitude, pos.Longitude, pos.Direction)
-	}
 }
