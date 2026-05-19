@@ -1,4 +1,4 @@
-package mapmatching
+package mapping
 
 import (
 	"fmt"
